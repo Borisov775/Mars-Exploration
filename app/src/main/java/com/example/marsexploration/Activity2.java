@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Activity2 extends AppCompatActivity {
     List<Rover> roverLists;
-    ImageView rv_spec_image,rv_spec_image2;
+    ImageView rv_spec_image;
     Button rv_web,rv_location;
     String id;
     MyApplication myApplication=(MyApplication) this.getApplication();
@@ -57,9 +57,7 @@ public class Activity2 extends AppCompatActivity {
             Uri webpage= Uri.parse(url);
             Intent intent =new Intent(Intent.ACTION_VIEW,webpage);
             startActivity(intent);
-            //if(intent.resolveActivity(getPackageManager())!=null){
                 startActivity(intent);
-            //}
         }
 
 }
