@@ -12,8 +12,8 @@ it will give people the feeling of pride for human genius. And it will provide t
 Main window consists of:
 <ul>
     <li>1. Toggle Bar - switch between types of spacecraft(probe,lander,rover,satellite)</li>
-    <li>2. RecycleView</li>
-    <li>3.
+    <li>2. Main Layout Activity</li>
+    <li>3. </li>
 </ul>
 <br>
 Each item(spacecraft) will consist the following functions(buttons):
