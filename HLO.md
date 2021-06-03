@@ -24,4 +24,7 @@ Each item(spacecraft) will consist the following functions(buttons):
 - MULTIMEDIA - Photo or Video, reffering to a mission
 - NOTE- make a note if you need to
 <h2>Development</h2>
--
+Вместо использования
+Рассказать про реализацию RecycleView, рассказать про адаптер и то что RecycleView затрагивае меньше ресурсов в CPU
+All data stored in Global variables, but if i have an extra time, I'll put in database from where I can retrieve them.
+I need to connect some API's for better working with Photo or Video, I mean the Glide package
