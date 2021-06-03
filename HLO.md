@@ -5,18 +5,18 @@
 1. George Borisov
 <h2>High-Level Overview</h2>
 The main goal of this app is to provide detailed information of all missions have ever taken to Mars,
- it might use like a reference book for engineer and operators who's currently working for Mars mission, it will give the capability to track all spacecraft on Mars Map, see the documentation of each spacecraft, and make some notes referring to each spacecraft.  This app is a prototype of a smart reference book and assistant in common. Moreover,
+ it might use like a reference book for engineers and operators who's currently working for Mars mission, it will give the capability to track all spacecraft on Mars Map, see the documentation of each spacecraft, and make some notes referring to each spacecraft.  This app is a prototype of a smart reference book and assistant in common. Moreover,
 it will give people the feeling of pride for human genius. And it will provide to be part of a big team of explorers which aims are simple - explore and find the answers.
 
 <h2>Functional Details</h2>
 Main window consists of:
 <ul>
     <li>1. Toggle Bar - switch between types of spacecraft(probe,lander,rover,satellite)</li>
-    <li>2. Main Layout Activity</li>
+    <li>2. Main Layout Activity(RecycleView)</li>
     <li>3. </li>
 </ul>
 <br>
-Each item(spacecraft) will consist the following functions(buttons):
+Each item(spacecraft)in RecycleView will consist the following functions(buttons):
 
 - TRAVERSE MAP - explore the Mars' map to see the landing site(or current position on orbit).
 - VISIT THE SITE - expanding the site of a mission
@@ -24,7 +24,5 @@ Each item(spacecraft) will consist the following functions(buttons):
 - MULTIMEDIA - Photo or Video, reffering to a mission
 - NOTE- make a note if you need to
 <h2>Development</h2>
-Вместо использования
-Рассказать про реализацию RecycleView, рассказать про адаптер и то что RecycleView затрагивае меньше ресурсов в CPU
-All data stored in Global variables, but if i have an extra time, I'll put in database from where I can retrieve them.
-I need to connect some API's for better working with Photo or Video, I mean the Glide package
+App is written on Java with using Gradle tools, also there is connection to some API's, for example -Glide(for better working with Photo or Video),for better experience instead of using ListView I use the RecycleView, some interesting functions like MTC clock are also written in Java. All data will ve stored in Global variables.
+
