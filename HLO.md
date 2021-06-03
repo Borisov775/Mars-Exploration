@@ -23,5 +23,5 @@ Each item(spacecraft)in RecycleView will consist the following functions(buttons
 -<br> MULTIMEDIA - Photo or Video, reffering to a mission
 -<br> NOTE- make a note if you need to
 <h2>Development</h2>
-App is written on Java with using Gradle tools, also there is connection to some API's, for example -Glide(for better working with Photo or Video),for better experience instead of using ListView I use the RecycleView, some interesting functions like MTC clock are also written in Java. All data will ve stored in Global variables.
+App is written on Java with using Gradle tools, also there is connection to some API's, for example -Glide(for better working with Photo or Video),for better experience instead of using ListView I use the RecycleView, some interesting functions like MTC clock are also written in Java. All data will be stored in Global variables.
 !During the development I may add more functions.
