@@ -17,11 +17,11 @@ Main window consists of:
 </ul>
 <br>
 Each item(spacecraft)in RecycleView will consist the following functions(buttons):
-- TRAVERSE MAP - explore the Mars' map to see the landing site(or current position on orbit).
-- VISIT THE SITE - expanding the site of a mission
-- DOCUMENTATION- expanding the press kit for a mission
-- MULTIMEDIA - Photo or Video, reffering to a mission
-- NOTE- make a note if you need to
+-<br> TRAVERSE MAP - explore the Mars' map to see the landing site(or current position on orbit).
+-<br>VISIT THE SITE - expanding the site of a mission
+-<br> DOCUMENTATION- expanding the press kit for a mission
+-<br> MULTIMEDIA - Photo or Video, reffering to a mission
+-<br> NOTE- make a note if you need to
 <h2>Development</h2>
 App is written on Java with using Gradle tools, also there is connection to some API's, for example -Glide(for better working with Photo or Video),for better experience instead of using ListView I use the RecycleView, some interesting functions like MTC clock are also written in Java. All data will ve stored in Global variables.
 !During the development I may add more functions.
