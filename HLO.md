@@ -13,7 +13,7 @@ Main window consists of:
 <ul>
     <li>1. Toggle Bar - switch between types of spacecraft(probe,lander,rover,satellite)</li>
     <li>2. Main Layout Activity(RecycleView)</li>
-    <li>3. </li>
+    <li>3. Additional Data(MTC time, UTC time and etc)</li>
 </ul>
 <br>
 Each item(spacecraft)in RecycleView will consist the following functions(buttons):
