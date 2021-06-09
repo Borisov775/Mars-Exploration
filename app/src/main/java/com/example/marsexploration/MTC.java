@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.OffsetDateTime;
 
 public class MTC {
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -23,6 +24,24 @@ public class MTC {
         //msd(mars sol day) -is running count of sols since 29,1873
         double msd=(((t2000-4.5)/1.027491252)+44796.0-0.00096);
         return msd;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static String TimeManager(){
+        OffsetDateTime now=OffsetDateTime.now();
+        String Hh=String.valueOf(now.getHour());
+        String Mm=String.valueOf(now.getMinute());
+        String Ss=String.valueOf(now.getSecond());
+        if(now.getHour()<10){
+            Hh="0"+Hh;
+        }
+        else if(now.getSecond()<10){
+            Ss="0"+Ss;
+        }
+        else if(now.getMinute()<10){
+            Mm="0"+Mm;
+        }
+        return Hh + ":" + Mm + ":" + Ss;
+
     }
     strictfp public static String CalculatingMTC(double msd){
         double f_h =msd%1;
