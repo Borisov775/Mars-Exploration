@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.pdf.PdfDocument;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.bumptech.glide.Glide;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +33,7 @@ import static com.example.marsexploration.R.id.time;
 public class MainActivity extends AppCompatActivity {
     ImageView rv_image;
     TextClock rv_time;
-    TextView time;
+    TextView time,rv_utc;
     private static final String TAG="MARSExploration App";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -56,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                updateTextView();
+                                updateTextView1();
+                                updateTextView2();
                             }
                         });
                     }
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
         t.start();
         time=findViewById(R.id.rv_mars_live);
+        rv_utc=findViewById(R.id.rv_utc);
         roverList=myApplication.getRoverList();
         rv_image=findViewById(RoverImage);
         Glide.with(MainActivity.this).load("https://www.universetoday.com/wp-content/uploads/2012/01/PIA15277_3rovers-hi_D2011_1215_D511_br2.jpg").into(rv_image);
@@ -85,10 +89,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
     }
 
-    private void updateTextView() {
+    private void updateTextView1() {
         time.setText(MTC.CalculatingMTC(MTC.Msd()));
     }
+    private void updateTextView2(){
+        rv_utc.setText(MTC.TimeManager());
 
+    };
 }
 
 
