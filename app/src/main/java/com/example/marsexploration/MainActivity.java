@@ -55,9 +55,12 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     while (!isInterrupted()) {
                         Thread.sleep(1000);
-                        runOnUiThread(() -> {
-                            updateTextView1();
-                            updateTextView2();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateTextView1();
+                                updateTextView2();
+                            }
                         });
                     }
                 } catch (InterruptedException e) {
