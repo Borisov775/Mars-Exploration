@@ -21,7 +21,7 @@ public class Activity2 extends AppCompatActivity {
     List<Rover> roverLists;
     ImageView rv_spec_image;
     PDFView pdfView;
-    Button rv_web,rv_location,rv_doc;
+    Button rv_web,rv_location,rv_doc,rv_imagesFunction;
     String id;
     MyApplication myApplication=(MyApplication) this.getApplication();
     @Override
@@ -34,6 +34,7 @@ public class Activity2 extends AppCompatActivity {
         rv_location=findViewById(R.id.rv_location);
         rv_doc=findViewById(R.id.rv_doc);
         pdfView=findViewById(R.id.pdf_viewer);
+        rv_imagesFunction=findViewById(R.id.rv_imagesFunction);
 
         pdfView.fromAsset("Mars Exploration Rover Press Kit.pdf").load();
 
@@ -61,6 +62,12 @@ public class Activity2 extends AppCompatActivity {
                         Intent intent=new Intent(v.getContext(),PdfActivity.class);
                         intent.putExtra("name",id);
                         startActivity(intent);
+                    }
+                });
+                rv_imagesFunction.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        openWebPage(rover.getImagesData());
                     }
                 });
             }

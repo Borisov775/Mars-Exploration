@@ -14,8 +14,10 @@ public class Rover {
     private String pageURL;
     private String currentLocation;
     private String pressKit;
+    private String ImagesData;
 
-    public Rover(String name, String dateOfLanding, String imageURL, String mode, String durationOfMission, String operator, String pageURL,String currentLocation,String pressKit) {
+    public Rover(String name, String dateOfLanding, String imageURL, String mode, String durationOfMission,
+                 String operator, String pageURL,String currentLocation,String pressKit,String ImagesData) {
         this.name = name;
         this.DateOfLanding = dateOfLanding;
         this.imageURL = imageURL;
@@ -25,6 +27,7 @@ public class Rover {
         this.pageURL=pageURL;
         this.currentLocation=currentLocation;
         this.pressKit=pressKit;
+        this.ImagesData=ImagesData;
     }
 
     @Override
@@ -107,5 +110,13 @@ public class Rover {
 
     public void setPressKit(String pressKit) {
         this.pressKit = pressKit;
+    }
+
+    public String getImagesData() {
+        return ImagesData;
+    }
+
+    public void setImagesData(String imagesData) {
+        ImagesData = imagesData;
     }
 }
