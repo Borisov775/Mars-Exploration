@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rv_images"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity2">
@@ -65,8 +66,8 @@
                 android:id="@+id/pdf_viewer"
                 android:layout_width="190dp"
                 android:layout_height="226dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
                 app:layout_constraintStart_toEndOf="@+id/rv_spec_image"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"></com.github.barteksc.pdfviewer.PDFView>
@@ -81,6 +82,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/rv_web"
                 app:layout_constraintTop_toBottomOf="@+id/pdf_viewer" />
+
+            <Button
+                android:id="@+id/rv_imagesFunction"
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="IMAGES"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/rv_location" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
