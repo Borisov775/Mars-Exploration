@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tabBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SatelliteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewSat"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="150dp"
@@ -17,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/RoverImage"
+        android:id="@+id/SatellitesImage"
         android:layout_width="177dp"
         android:layout_height="118dp"
         android:layout_marginTop="8dp"
@@ -32,14 +30,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="ROVERS"
+        android:text="SATELLITES"
         android:textColor="#D5481C"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/rv_utc"
-        app:layout_constraintTop_toBottomOf="@+id/rv_utc" />
+        app:layout_constraintStart_toStartOf="@+id/st_utcText"
+        app:layout_constraintTop_toBottomOf="@+id/st_utcText" />
 
     <TextView
-        android:id="@+id/rv_mars_live"
+        android:id="@+id/st_mtcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -47,11 +45,11 @@
         android:textColor="#D5481C"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/RoverImage" />
+        app:layout_constraintStart_toEndOf="@+id/st_mtc"
+        app:layout_constraintTop_toTopOf="@+id/SatellitesImage" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/st_mtc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -60,10 +58,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rv_mars_live" />
+        app:layout_constraintTop_toTopOf="@+id/st_mtcText" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/st_utc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -73,10 +71,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/st_mtc" />
 
     <TextView
-        android:id="@+id/rv_utc"
+        android:id="@+id/st_utcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -84,7 +82,7 @@
         android:textColor="#D5481C"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/rv_mars_live"
-        app:layout_constraintTop_toBottomOf="@+id/rv_mars_live" />
+        app:layout_constraintStart_toStartOf="@+id/st_mtcText"
+        app:layout_constraintTop_toBottomOf="@+id/st_mtcText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
