@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,30 +21,31 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
-import static com.example.marsexploration.R.id.RoverImage;
-import static com.example.marsexploration.R.id.SatellitesImage;
-
 @RequiresApi(api = Build.VERSION_CODES.O)
-public class MainActivity extends AppCompatActivity {
-    ImageView rv_image;
-    TextClock rv_time;
-    TextView time,rv_utc;
+public class SatelliteActivity extends AppCompatActivity {
+    ImageView st_image;
+    TextView st_time,st_utc;
     private static final String TAG="MARSExploration App";
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView2;
     private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.LayoutManager layoutManagerSat;
 
     MyApplication myApplication= (MyApplication) this.getApplication();
-    static List<Rover>roverList;
+
+    private static List<Satellite> satelliteList;
+
     MTC mtc=new MTC();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        //satelliteList.addAll(Arrays.asList(new Satellite("Mars 2","1971","https://upload.wikimedia.org/wikipedia/commons/1/13/Mars3_iki.jpg","inactive","269 days","Lavochkin"),
+        //        new Satellite("Mars 3","1971","https://upload.wikimedia.org/wikipedia/commons/1/13/Mars3_iki.jpg","inactive","264","Lavochkin")));
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_satellite2);
         Thread t = new Thread() {
 
             @Override
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     while (!isInterrupted()) {
                         Thread.sleep(1000);
                         runOnUiThread(new Runnable() {
-                            @Override
+
                             public void run() {
                                 updateTextView1();
                                 updateTextView2();
@@ -64,32 +66,30 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
         t.start();
-        time=findViewById(R.id.rv_mars_live);
-        rv_utc=findViewById(R.id.rv_utc);
-        roverList=myApplication.getRoverList();
-        rv_image=findViewById(RoverImage);
-        Glide.with(MainActivity.this).load("https://www.universetoday.com/wp-content/uploads/2012/01/PIA15277_3rovers-hi_D2011_1215_D511_br2.jpg").into(rv_image);
-        //Log.d(TAG,"onCreate"+roverList.toString());
-        //Toast.makeText(this,"Rovers count "+roverList.size(),Toast.LENGTH_SHORT).show();
-        recyclerView=findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setNestedScrollingEnabled(true);
-        layoutManager=new LinearLayoutManager(this);//I've created one
-        recyclerView.setLayoutManager(layoutManager);
-        mAdapter=new RecyclerViewAdapter(roverList,MainActivity.this);
-        recyclerView.setAdapter(mAdapter);
+        satelliteList=myApplication.getSatelliteList();
+        st_time=findViewById(R.id.st_mtcText);
+        st_utc=findViewById(R.id.st_utcText);
+        st_image=findViewById(R.id.SatellitesImage);
+        Glide.with(SatelliteActivity.this).load("https://mars.nasa.gov/system/content_pages/main_images/366_mro20100917_PIA05490_modest.jpg").into(st_image);
+        //Log.d(TAG,"onCreate"+satelliteList.toString());
+        //Toast.makeText(this,"Satellites count "+satelliteList.size(),Toast.LENGTH_SHORT).show();
+        recyclerView2=findViewById(R.id.recyclerViewSat);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setNestedScrollingEnabled(true);
+        layoutManagerSat=new LinearLayoutManager(this);//I've created one
+        recyclerView2.setLayoutManager(layoutManagerSat);
+        mAdapter=new RecycleViewAdapterSat (satelliteList,SatelliteActivity.this);
+        recyclerView2.setAdapter(mAdapter);
     }
 
     private void updateTextView1() {
-        time.setText(MTC.CalculatingMTC(MTC.Msd()));
+        st_time.setText(MTC.CalculatingMTC(MTC.Msd()));
     }
     private void updateTextView2(){
-        rv_utc.setText(MTC.TimeManager());
+        st_utc.setText(MTC.TimeManager());
 
     };
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
@@ -118,6 +118,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-

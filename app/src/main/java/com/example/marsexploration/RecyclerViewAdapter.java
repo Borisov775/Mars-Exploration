@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+import java.util.Objects;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
     List<Rover>roverList;
@@ -62,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return roverList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ed_rv_image;
         TextView ed_name;
         TextView ed_dateOfLanding;
@@ -75,11 +76,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             ed_rv_image= itemView.findViewById(R.id.ed_rv_image);
             ed_name=itemView.findViewById(R.id.ed_name);
-            ed_dateOfLanding=itemView.findViewById(R.id.et_DateOfLanding);
+            ed_dateOfLanding=itemView.findViewById(R.id.ed_DateOfLanding);
             ed_mode=itemView.findViewById(R.id.ed_mode);
             ed_duration=itemView.findViewById(R.id.ed_duration);
             ed_operator=itemView.findViewById(R.id.ed_operator);
             constraintLayout=itemView.findViewById(R.id.oneLineRoverLayout);
         }
     }
+
+
 }

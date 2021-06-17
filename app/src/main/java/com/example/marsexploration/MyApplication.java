@@ -8,9 +8,13 @@ import java.util.List;
 
 public class MyApplication extends Application {
     public static List<Rover> roverList= new ArrayList<Rover>();
+    public static List<Satellite> satelliteList=new ArrayList<Satellite>();
     public MyApplication(){
         fillRoverList();
+        fillSatList();
     }
+    //public MyApplication(){fillSatList();}
+
     private void fillRoverList(){
         Rover p1=new Rover("Sojourner(mis.Pathfinder)","1997","https://upload.wikimedia.org/wikipedia/commons/3/3a/Sojourner_on_Mars_PIA01122.jpg","inactive","85 days","NASA","https://mars.nasa.gov/MPF/index0.html",
                 "https://trek.nasa.gov/mars/#v=0.1&x=-33.23796738688808&y=19.07996832584193&z=12&p=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A104905&d=&l=sojourner_hirise_mosaic%2Ctrue%2C1&locale=&b=mars&e=-33.317017449500426%2C19.017998569917808%2C-33.158917324275734%2C19.14193808176605&sfz=&w=","https://mars.nasa.gov/internal_resources/816/",
@@ -32,6 +36,12 @@ public class MyApplication extends Application {
                 "https://www.planetary.org/space-images?imgkeywords=tianwen-1");
         roverList.addAll(Arrays.asList(new Rover[]{p1,p2,p3,p4,p5,p6}));
     }
+    private void fillSatList(){
+        Satellite s1=new Satellite("Mars2","1971","https://upload.wikimedia.org/wikipedia/commons/1/13/Mars3_iki.jpg","inactive","269 days","Lavochkin");
+        Satellite s2=new Satellite("Mars3","1971","https://upload.wikimedia.org/wikipedia/commons/1/13/Mars3_iki.jpg","inactive","264","Lavochkin");
+        satelliteList.addAll(Arrays.asList(new Satellite[]{s1,s2}));
+    }
+
 
     public static List<Rover> getRoverList() { return roverList;}
 
@@ -39,4 +49,13 @@ public class MyApplication extends Application {
 
         MyApplication.roverList = roverList;
     }
+    public static List<Satellite> getSatelliteList() {
+        return satelliteList;
+    }
+
+    public static void setSatelliteList(List<Satellite> satelliteList) {
+        MyApplicationSat.satelliteList = satelliteList;
+    }
+
+
 }

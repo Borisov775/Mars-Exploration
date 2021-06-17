@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.net.URL;
 
-public class Rover {
+public class Rover implements Spacecraft{
     private String name;
     private String DateOfLanding;
     private String imageURL;
