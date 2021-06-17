@@ -2,34 +2,33 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/oneLineRoverLayout"
+    android:id="@+id/SatelliteLayout"
     android:layout_width="wrap_content"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/ed_rv_image"
+        android:id="@+id/st_image"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:duplicateParentState="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/ed_name"
+        android:id="@+id/st_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ed_rv_image"
-        app:layout_constraintEnd_toEndOf="@+id/ed_rv_image"
+        app:layout_constraintBottom_toTopOf="@+id/st_image"
+        app:layout_constraintEnd_toEndOf="@+id/st_image"
         app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="@+id/ed_rv_image"
+        app:layout_constraintStart_toStartOf="@+id/st_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -41,7 +40,7 @@
         android:layout_marginTop="16dp"
         android:text="Mission status:"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ed_rv_image"
+        app:layout_constraintStart_toEndOf="@+id/st_image"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
@@ -50,10 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Landing:"
+        android:text="Arriving:"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ed_rv_image"
-        app:layout_constraintTop_toTopOf="@+id/ed_rv_image" />
+        app:layout_constraintStart_toEndOf="@+id/st_image"
+        app:layout_constraintTop_toTopOf="@+id/st_image" />
 
     <TextView
         android:id="@+id/operator"
@@ -63,11 +62,11 @@
         android:layout_marginTop="16dp"
         android:text="Operator:"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ed_rv_image"
+        app:layout_constraintStart_toEndOf="@+id/st_image"
         app:layout_constraintTop_toBottomOf="@+id/duration" />
 
     <TextView
-        android:id="@+id/ed_DateOfLanding"
+        android:id="@+id/st_DateOfLanding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -76,7 +75,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/ed_mode"
+        android:id="@+id/st_mode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -85,7 +84,7 @@
         app:layout_constraintTop_toTopOf="@+id/status" />
 
     <TextView
-        android:id="@+id/ed_operator"
+        android:id="@+id/st_operator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -101,11 +100,11 @@
         android:layout_marginTop="16dp"
         android:text="Mission duration:"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ed_rv_image"
+        app:layout_constraintStart_toEndOf="@+id/st_image"
         app:layout_constraintTop_toBottomOf="@+id/status" />
 
     <TextView
-        android:id="@+id/ed_duration"
+        android:id="@+id/st_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -121,5 +120,6 @@
         android:layout_marginTop="3dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_rv_image" />
+        app:layout_constraintTop_toBottomOf="@+id/st_image" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
