@@ -2,11 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rv_images"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity2">
-
+    tools:context=".ActivitySat">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +21,7 @@
             tools:layout_editor_absoluteY="1dp">
 
             <ImageView
-                android:id="@+id/rv_spec_image"
+                android:id="@+id/st_spec_image"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_marginStart="8dp"
@@ -33,56 +31,55 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <Button
-                android:id="@+id/rv_web"
+                android:id="@+id/st_web"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="108dp"
                 android:text="visit site"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_spec_image" />
+                app:layout_constraintTop_toBottomOf="@+id/st_spec_image" />
 
             <Button
-                android:id="@+id/rv_location"
+                android:id="@+id/st_location"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="traverse map"
-                app:layout_constraintBottom_toTopOf="@+id/rv_web"
+                app:layout_constraintBottom_toTopOf="@+id/st_web"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                android:id="@+id/rv_doc"
+                android:id="@+id/st_doc"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="PRess Kit"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rv_web" />
+                app:layout_constraintTop_toBottomOf="@+id/st_web" />
 
             <Button
-                android:id="@+id/rv_imagesFunction"
+                android:id="@+id/st_imagesFunction"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="8dp"
                 android:text="IMAGES"
-                app:layout_constraintBottom_toBottomOf="@+id/rv_location"
+                app:layout_constraintBottom_toBottomOf="@+id/st_location"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/rv_location" />
+                app:layout_constraintStart_toEndOf="@+id/st_location" />
 
             <TextView
-                android:id="@+id/rv_name2"
-                android:layout_width="262dp"
-                android:layout_height="28dp"
+                android:id="@+id/st_name2"
+                android:layout_width="301dp"
+                android:layout_height="34dp"
                 android:layout_marginTop="8dp"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="#D5481C"
-                android:textColorLink="#D5481C"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -90,12 +87,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/rv_em"
+                android:id="@+id/st_em"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/rv_spec_image"
-                app:layout_constraintTop_toTopOf="@+id/rv_spec_image"
+                app:layout_constraintStart_toEndOf="@+id/st_spec_image"
+                app:layout_constraintTop_toTopOf="@+id/st_spec_image"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,6 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.ed_mode.setText(roverList.get(position).getMode());
         holder.ed_dateOfLanding.setText(roverList.get(position).getDateOfLanding());
         Glide.with(this.context).load(roverList.get(position).getImageURL()).override(600,400).into(holder.ed_rv_image);
+        Glide.with(this.context).load(roverList.get(position).getFlag()).into(holder.rv_flag);
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +66,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView ed_rv_image;
+        ImageView rv_flag;
         TextView ed_name;
         TextView ed_dateOfLanding;
         TextView ed_mode;
@@ -75,6 +77,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(@NonNull  View itemView) {
             super(itemView);
             ed_rv_image= itemView.findViewById(R.id.ed_rv_image);
+            rv_flag=itemView.findViewById(R.id.rv_flag);
             ed_name=itemView.findViewById(R.id.ed_name);
             ed_dateOfLanding=itemView.findViewById(R.id.ed_DateOfLanding);
             ed_mode=itemView.findViewById(R.id.ed_mode);

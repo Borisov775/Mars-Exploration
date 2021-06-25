@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Arriving:"
+        android:text="Entered orbit:"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/st_image"
         app:layout_constraintTop_toTopOf="@+id/st_image" />
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/operator"
+        app:layout_constraintStart_toEndOf="@+id/st_flag"
         app:layout_constraintTop_toTopOf="@+id/operator" />
 
     <TextView
@@ -121,5 +121,14 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/st_image" />
+
+    <ImageView
+        android:id="@+id/st_flag"
+        android:layout_width="29dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/operator"
+        app:layout_constraintTop_toTopOf="@+id/operator"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

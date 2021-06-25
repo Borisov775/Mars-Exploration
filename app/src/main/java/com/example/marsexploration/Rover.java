@@ -5,9 +5,11 @@ import androidx.annotation.NonNull;
 import java.net.URL;
 
 public class Rover implements Spacecraft{
+    private String emblem;
     private String name;
     private String DateOfLanding;
     private String imageURL;
+    private String flag;
     private String Mode;
     private String operator;
     private String durationOfMission;
@@ -17,10 +19,12 @@ public class Rover implements Spacecraft{
     private String ImagesData;
 
     public Rover(String name, String dateOfLanding, String imageURL, String mode, String durationOfMission,
-                 String operator, String pageURL,String currentLocation,String pressKit,String ImagesData) {
+                 String operator, String pageURL,String currentLocation,String pressKit,String ImagesData,String flag,String emblem) {
+        this.emblem=emblem;
         this.name = name;
         this.DateOfLanding = dateOfLanding;
         this.imageURL = imageURL;
+        this.flag=flag;
         this.Mode = mode;
         this.operator=operator;
         this.durationOfMission=durationOfMission;
@@ -118,5 +122,21 @@ public class Rover implements Spacecraft{
 
     public void setImagesData(String imagesData) {
         ImagesData = imagesData;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    public String getEmblem() {
+        return emblem;
+    }
+
+    public void setEmblem(String emblem) {
+        this.emblem = emblem;
     }
 }
