@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MARSExploration">
+        <activity android:name=".ActivitySat"></activity>
         <activity android:name=".SatelliteActivity" />
         <activity android:name=".NoteAditor" />
         <activity android:name=".Notes" />

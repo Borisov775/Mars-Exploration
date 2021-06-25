@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/operator"
+        app:layout_constraintStart_toEndOf="@+id/rv_flag"
         app:layout_constraintTop_toTopOf="@+id/operator" />
 
     <TextView
@@ -122,4 +122,13 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_rv_image" />
+
+    <ImageView
+        android:id="@+id/rv_flag"
+        android:layout_width="29dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/operator"
+        app:layout_constraintTop_toTopOf="@+id/operator"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
