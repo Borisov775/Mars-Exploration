@@ -45,10 +45,11 @@ public class RecycleViewAdapterSat extends RecyclerView.Adapter<RecycleViewAdapt
         holder.st_mode.setText(satelliteList.get(position).getMode());
         holder.st_dateOfArriving.setText(satelliteList.get(position).getDateOfLanding());
         Glide.with(this.context).load(satelliteList.get(position).getImageURL()).override(600,400).into(holder.st_image);
+        Glide.with(this.context).load(satelliteList.get(position).getFlag()).into(holder.st_flag);
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(context,Activity2.class);
+                Intent intent =new Intent(context,ActivitySat.class);
                 intent.putExtra("name",satelliteList.get(position).getName());
                 context.startActivity(intent);
             }
@@ -62,6 +63,7 @@ public class RecycleViewAdapterSat extends RecyclerView.Adapter<RecycleViewAdapt
 
     public class MyViewHolder2 extends RecyclerView.ViewHolder {
         ImageView st_image;
+        ImageView st_flag;
         TextView st_name;
         TextView st_dateOfArriving;
         TextView st_mode;
@@ -72,6 +74,7 @@ public class RecycleViewAdapterSat extends RecyclerView.Adapter<RecycleViewAdapt
         public MyViewHolder2(@NonNull  View itemView) {
             super(itemView);
             st_image= itemView.findViewById(R.id.st_image);
+            st_flag=itemView.findViewById(R.id.st_flag);
             st_name=itemView.findViewById(R.id.st_name);
             st_dateOfArriving=itemView.findViewById(R.id.st_DateOfLanding);
             st_mode=itemView.findViewById(R.id.st_mode);

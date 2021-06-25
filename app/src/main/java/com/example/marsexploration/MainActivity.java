@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 return true;
             case R.id.item3:
-                Toast.makeText(this,"Lander's section selected",Toast.LENGTH_SHORT).show();
+               Toast.makeText(this,"Lander's section selected",Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

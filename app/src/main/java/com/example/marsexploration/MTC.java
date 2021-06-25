@@ -34,10 +34,10 @@ public class MTC {
         if(now.getHour()<10){
             Hh="0"+Hh;
         }
-        else if(now.getSecond()<10){
+        if(now.getSecond()<10){
             Ss="0"+Ss;
         }
-        else if(now.getMinute()<10){
+        if(now.getMinute()<10){
             Mm="0"+Mm;
         }
         return Hh + ":" + Mm + ":" + Ss;
