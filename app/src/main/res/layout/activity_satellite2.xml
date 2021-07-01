@@ -16,10 +16,10 @@
 
     <ImageView
         android:id="@+id/SatellitesImage"
-        android:layout_width="177dp"
-        android:layout_height="118dp"
+        android:layout_width="163dp"
+        android:layout_height="116dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@mipmap/mars_rover" />
@@ -29,46 +29,48 @@
         style="@style/Widget.AppCompat.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
         android:text="SATELLITES"
         android:textColor="#D5481C"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/st_utcText"
-        app:layout_constraintTop_toBottomOf="@+id/st_utcText" />
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewSat"
+        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/st_mtcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="3dp"
         android:text="TextView"
         android:textColor="#D5481C"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/st_mtc"
-        app:layout_constraintTop_toTopOf="@+id/SatellitesImage" />
+        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/st_mtc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="MTC:"
+        android:layout_marginStart="8dp"
+        android:text="Mars Coordinated Time:"
         android:textColor="#D5481C"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/st_mtcText" />
 
     <TextView
-        android:id="@+id/st_utc"
+        android:id="@+id/ld_utc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="UTC:"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Coordinated Universal Time:"
         android:textColor="#D5481C"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/st_mtc" />
@@ -77,12 +79,22 @@
         android:id="@+id/st_utcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
         android:text="TextView"
         android:textColor="#D5481C"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
         app:layout_constraintStart_toStartOf="@+id/st_mtcText"
-        app:layout_constraintTop_toBottomOf="@+id/st_mtcText" />
+        app:layout_constraintTop_toTopOf="@+id/ld_utc" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="409dp"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewSat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SatellitesImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

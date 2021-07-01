@@ -24,6 +24,7 @@ import java.util.List;
 
 import static com.example.marsexploration.R.id.RoverImage;
 import static com.example.marsexploration.R.id.SatellitesImage;
+import static com.example.marsexploration.R.id.satellite;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class MainActivity extends AppCompatActivity {
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         });
                     }
                 } catch (InterruptedException e) {
-                    //
+                    //do nothing
                 }
             }
         };
@@ -71,18 +72,21 @@ public class MainActivity extends AppCompatActivity {
         roverList=myApplication.getRoverList();
         rv_image=findViewById(RoverImage);
         Glide.with(MainActivity.this).load("https://www.universetoday.com/wp-content/uploads/2012/01/PIA15277_3rovers-hi_D2011_1215_D511_br2.jpg").into(rv_image);
-        //Log.d(TAG,"onCreate"+roverList.toString());
-        //Toast.makeText(this,"Rovers count "+roverList.size(),Toast.LENGTH_SHORT).show();
         recyclerView=findViewById(R.id.recyclerView);
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(true);
+        //use a linear layout manager
         layoutManager=new LinearLayoutManager(this);//I've created one
         recyclerView.setLayoutManager(layoutManager);
+
+        //specify an adapter
         mAdapter=new RecyclerViewAdapter(roverList,MainActivity.this);
         recyclerView.setAdapter(mAdapter);
     }
 
     private void updateTextView1() {
+
         time.setText(MTC.CalculatingMTC(MTC.Msd()));
     }
     private void updateTextView2(){
@@ -112,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.item3:
                Toast.makeText(this,"Lander's section selected",Toast.LENGTH_SHORT).show();
+                Intent intent3=new Intent(getApplicationContext(),LanderActivity.class);
+                startActivity(intent3);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

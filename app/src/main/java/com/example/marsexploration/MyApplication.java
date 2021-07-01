@@ -1,19 +1,21 @@
 package com.example.marsexploration;
 
 import android.app.Application;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MyApplication extends Application {
+    public static List<Lander>landerList= new ArrayList<Lander>();
     public static List<Rover> roverList= new ArrayList<Rover>();
     public static List<Satellite> satelliteList=new ArrayList<Satellite>();
     public MyApplication(){
         fillRoverList();
         fillSatList();
+        fillLanderList();
     }
-    //public MyApplication(){fillSatList();}
 
     private void fillRoverList(){
         Rover p1=new Rover("Sojourner(mis.Pathfinder)","July 4, 1997","https://upload.wikimedia.org/wikipedia/commons/3/3a/Sojourner_on_Mars_PIA01122.jpg","inactive","85 days","NASA","https://mars.nasa.gov/MPF/index0.html",
@@ -114,6 +116,36 @@ public class MyApplication extends Application {
                 "https://cdn.sci.esa.int/documents/33431/35217/1567215141540-ExoMars_mission_logo_625.jpg");
                 satelliteList.addAll(Arrays.asList(new Satellite[]{s2,s3,s4,s5,s6,s7,s8,s9,s10,s11}));
     }
+    private void fillLanderList(){
+        //https://mars.nasa.gov/MPF/mpf/landing.html
+        Lander ld1=new Lander("Mars 3","May 28, 1971","https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Mars3_iki.jpg/375px-Mars3_iki.jpg",
+                "mission failure","-","Lavochkin",
+                "https://en.wikipedia.org/wiki/Mars_3#Lander","https://en.wikipedia.org/wiki/Mars_3#/media/File:PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
+                "efef","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg/1920px-PIA16920-MarsSoviet3Lander1971-PossibleDebrisField.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_Soviet_Union.svg/35px-Flag_of_the_Soviet_Union.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_Soviet_Union.svg/1200px-Flag_of_the_Soviet_Union.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/4/49/Mars3_lander2_vsm.jpg");
+        Lander ld2=new Lander("Viking 1&2","1976","https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA01522.width-1600.jpg",
+                "inactive","2896 days","NASA/JPL","https://nssdc.gsfc.nasa.gov/planetary/viking.html",
+                "https://exploration.esa.int/web/mars/-/57460-landing-sites-on-mars","efef","https://www.jpl.nasa.gov/images?query=Viking%201",
+                "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/35px-Flag_of_the_United_States.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/3/3b/Project_Viking_Logo_-_Patch_Style_1974-L-01916.jpg",
+                "https://airandspace.si.edu/sites/default/files/images/stories/sagan_viking.jpg");
+        Lander ld3=new Lander("Pathfinder lander","July 4, 1997","https://img1.cgtrader.com/items/1975262/5cc7a68fdf/mars-pathfinder-nasa-3d-model-max-fbx.jpg",
+                "inactive","85 days","NASA/JPL","https://mars.nasa.gov/MPF/index0.html",
+                "https://mars.nasa.gov/MPF/mpf/landing.html","efef","https://mars.nasa.gov/MPF/ops/other.html",
+                "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/35px-Flag_of_the_United_States.svg.png",
+                "https://rammb.cira.colostate.edu/dev/hillger/MarsPathfinder_Sojourner_mission-patch.gif",
+                "https://static.wikia.nocookie.net/the-martian/images/5/57/Pathfinder_1.jpg/revision/latest?cb=20170304212951");
+        Lander ld4=new Lander("Mars Phoenix","May 25, 2008","https://mars.nasa.gov/system/content_pages/main_images/383_phoenix-lander.jpg",
+                "inactive","161 days","NASA/JPL/Univ.of Arizona","http://phoenix.lpl.arizona.edu/",
+                "https://www.nasa.gov/mission_pages/phoenix/images/press/PhoenixOnGlobeWithText2.html","efef",
+                "https://www.jpl.nasa.gov/images?query=Mars%20Phoenix",
+                "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/35px-Flag_of_the_United_States.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Phoenix_mission_logo.png/900px-Phoenix_mission_logo.png",
+                "https://d2pn8kiwq2w21t.cloudfront.net/images/jpegPIA13804.width-1600.jpg");
+        landerList.addAll(Arrays.asList(new Lander[]{ld1,ld2,ld3,ld4}));
+    }
 
 
     public static List<Rover> getRoverList() { return roverList;}
@@ -126,7 +158,15 @@ public class MyApplication extends Application {
         return satelliteList;
     }
 
+    public static List<Lander> getLanderList() {
+        return landerList;
+    }
 
+    public static void setLanderList(List<Lander> landerList) {
+        MyApplication.landerList = landerList;
+    }
 
-
+    public static void setSatelliteList(List<Satellite> satelliteList) {
+        MyApplication.satelliteList = satelliteList;
+    }
 }
