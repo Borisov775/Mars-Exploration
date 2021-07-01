@@ -1,48 +1,44 @@
 package com.example.marsexploration;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.TextClock;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 @RequiresApi(api = Build.VERSION_CODES.O)
-public class SatelliteActivity extends AppCompatActivity {
-    ImageView st_image;
-    TextView st_time,st_utc;
+public class LanderActivity extends AppCompatActivity {
+    ImageView ld_image;
+    TextView ld_time,ld_utc;
     private static final String TAG="MARSExploration App";
-    private RecyclerView recyclerView2;
+    private RecyclerView recyclerView3;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManagerSat;
 
     MyApplication myApplication= (MyApplication) this.getApplication();
 
-    private static List<Satellite> satelliteList;
-
+    private static List<Lander> landerList;
     MTC mtc=new MTC();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_satellite2);
+        setContentView(R.layout.activity_lander);
         Thread t = new Thread() {
 
             @Override
@@ -64,27 +60,29 @@ public class SatelliteActivity extends AppCompatActivity {
             }
         };
         t.start();
-        satelliteList=myApplication.getSatelliteList();
-        st_time=findViewById(R.id.st_mtcText);
-        st_utc=findViewById(R.id.st_utcText);
-        st_image=findViewById(R.id.SatellitesImage);
-        Glide.with(SatelliteActivity.this).load("https://mars.nasa.gov/system/content_pages/main_images/366_mro20100917_PIA05490_modest.jpg").into(st_image);
-        recyclerView2=findViewById(R.id.recyclerViewSat);
-        recyclerView2.setHasFixedSize(true);
-        recyclerView2.setNestedScrollingEnabled(true);
-        layoutManagerSat=new LinearLayoutManager(this);//I've created one
-        recyclerView2.setLayoutManager(layoutManagerSat);
-        mAdapter=new RecycleViewAdapterSat (satelliteList,SatelliteActivity.this);
-        recyclerView2.setAdapter(mAdapter);
+        landerList=myApplication.getLanderList();
+        ld_time=findViewById(R.id.ld_mtcText);
+        ld_utc=findViewById(R.id.ld_utcText);
+        ld_image=findViewById(R.id.LanderImage);
+        Glide.with(LanderActivity.this).load("https://mars.nasa.gov/system/content_pages/main_images/383_phoenix-lander.jpg").into(ld_image);
+        recyclerView3=findViewById(R.id.recyclerViewLd);
+        recyclerView3.setHasFixedSize(true);
+        recyclerView3.setNestedScrollingEnabled(true);
+        LinearLayoutManager layoutManagerLd = new LinearLayoutManager(this);//I've created one
+        recyclerView3.setLayoutManager(layoutManagerLd);
+        mAdapter=new RecycleViewAdapterLander (landerList,LanderActivity.this);
+        recyclerView3.setAdapter(mAdapter);
     }
 
     private void updateTextView1() {
-        st_time.setText(MTC.CalculatingMTC(MTC.Msd()));
+
+        ld_time.setText(MTC.CalculatingMTC(MTC.Msd()));
     }
     private void updateTextView2(){
-        st_utc.setText(MTC.TimeManager());
+        ld_utc.setText(MTC.TimeManager());
 
     };
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();

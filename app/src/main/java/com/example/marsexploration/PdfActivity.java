@@ -32,6 +32,7 @@ public class PdfActivity extends AppCompatActivity {
         id= intent.getStringExtra("name");
         switch (id){
             case "Sojourner(mis.Pathfinder)":
+            case "Pathfinder lander":
                 pdfView1.fromAsset("Press-Kit Pathfinder.pdf")
                         .load();
                 break;
@@ -72,18 +73,31 @@ public class PdfActivity extends AppCompatActivity {
             case "2001 Mars Odyssey":
                 pdfView1.fromAsset("odysseyarrival1.pdf")
                         .load();
+                break;
             case "Mars Express":
                 pdfView1.fromAsset("SCHMIDT2.pdf")
                         .load();
+                break;
             case "Mars Reconnaissance Orbiter":
                 pdfView1.fromAsset("mro-arrival.pdf")
                         .load();
+                break;
             case "MAVEN":
                 pdfView1.fromAsset("MAVEN.pdf")
                         .load();
+                break;
             case "ExoMars 2016 Mission":
                 pdfView1.fromAsset("ExoM26.pdf")
                         .load();
+                break;
+            case "Viking 1&2" :
+                pdfView1.fromAsset("VikingEncouter.pdf")
+                        .load();
+                break;
+            case "Mars Phoenix":
+                pdfView1.fromAsset("fact_sheet.pdf")
+                        .load();
+                break;
         }
         notes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +106,5 @@ public class PdfActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 }

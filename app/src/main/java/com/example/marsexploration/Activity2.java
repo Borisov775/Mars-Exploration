@@ -29,14 +29,14 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
         roverLists=myApplication.getRoverList();
-        rv_spec_image=findViewById(R.id.rv_spec_image);
+        rv_spec_image=findViewById(R.id.ld_spec_image);
         rv_web=findViewById(R.id.rv_web);
         rv_location=findViewById(R.id.rv_location);
         rv_doc=findViewById(R.id.rv_doc);
         rv_imagesFunction=findViewById(R.id.rv_imagesFunction);
         rv_flag=findViewById(R.id.rv_flag);
-        rv_name=findViewById(R.id.rv_name2);
-        rv_em=findViewById(R.id.rv_em);
+        rv_name=findViewById(R.id.ld_name2);
+        rv_em=findViewById(R.id.ld_em);
         //pdfView.fromAsset("Mars Exploration Rover Press Kit.pdf").load();
 
         Intent intent=getIntent();
