@@ -32,67 +32,69 @@
         android:layout_marginBottom="32dp"
         android:text="SATELLITES"
         android:textColor="#D5481C"
-        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewSat"
         app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/st_utcText" />
 
     <TextView
         android:id="@+id/st_mtcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="3dp"
         android:text="TextView"
         android:textColor="#D5481C"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/st_mtc"
+        app:layout_constraintStart_toStartOf="@+id/st_mtc"
+        app:layout_constraintTop_toBottomOf="@+id/st_mtc" />
 
     <TextView
         android:id="@+id/st_mtc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="55dp"
         android:text="Mars Coordinated Time:"
         android:textColor="#D5481C"
-        android:textSize="13sp"
+        android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/st_mtcText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/ld_utc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="Coordinated Universal Time:"
         android:textColor="#D5481C"
-        android:textSize="13sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/st_mtc" />
+        app:layout_constraintStart_toStartOf="@+id/st_mtc"
+        app:layout_constraintTop_toBottomOf="@+id/st_mtcText" />
 
     <TextView
         android:id="@+id/st_utcText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
         android:text="TextView"
         android:textColor="#D5481C"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/SatellitesImage"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/st_mtcText"
         app:layout_constraintStart_toStartOf="@+id/st_mtcText"
-        app:layout_constraintTop_toTopOf="@+id/ld_utc" />
+        app:layout_constraintTop_toBottomOf="@+id/ld_utc" />
 
     <View
         android:id="@+id/divider2"
         android:layout_width="409dp"
         android:layout_height="3dp"
         android:background="?android:attr/listDivider"
+        android:backgroundTint="#D5481C"
         app:layout_constraintBottom_toTopOf="@+id/recyclerViewSat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SatellitesImage" />

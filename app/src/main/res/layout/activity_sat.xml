@@ -48,7 +48,8 @@
                 android:layout_marginBottom="8dp"
                 android:text="traverse map"
                 app:layout_constraintBottom_toTopOf="@+id/st_web"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.CircularProgressIndicator" />
 
             <Button
                 android:id="@+id/st_doc"

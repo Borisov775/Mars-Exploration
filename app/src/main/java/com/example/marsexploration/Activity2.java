@@ -2,6 +2,7 @@ package com.example.marsexploration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ public class Activity2 extends AppCompatActivity {
     Button rv_web,rv_location,rv_doc,rv_imagesFunction;
     String id;
     MyApplication myApplication=(MyApplication) this.getApplication();
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
